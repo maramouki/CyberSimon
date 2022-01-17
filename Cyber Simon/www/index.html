@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/resetcss.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" href="images/Kiwe-icon.png" />
+		<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+		<title>Cyber Simon</title>
+	</head>
+	<body>
+		<div class="body">
+			<!-- start -->
+			<video
+				id="vPres"
+				class="Vpresentation"
+				src="images/intro.mp4"
+				autoplay
+				controls
+			></video>
+			<header>
+				<div class="header">
+					<h1 class="heading js-heading">Cyber Simon</h1>
+				</div>
+				<input readonly type="text" class="clock" id="clock" />
+			</header>
+
+			<!-- Les Règles -->
+			<div class="regles" id="regles">
+				<div class="text_regles">
+					<!-- Text des regles -->
+					<h3 class="titreRegle">Règles</h3>
+					<p class="presultat">
+						Ta console de jeu est constituée de 4 boutons colorés. Ces boutons
+						vont s’allumer les uns après les autres, suivant un schéma
+						déterminé. À toi de reproduire ce schéma, en cliquant sur les
+						boutons en suivant précisément l’ordre dans lequel ils se sont
+						allumés. Fais donc attention et mets en marche ta mémoire !
+						<br />
+						Si tu as besoin d'aide n'hésite pas à cliquer sur mon icône !
+					</p>
+					<!-- Affichage des résulats dans le div Règles -->
+					<div class="tresultat">
+						<p>
+							Temps :
+							<input
+								readonly
+								type="text"
+								class="buttonResult"
+								id="clockresult"
+							/>
+							sec
+						</p>
+						<p>
+							Tours :
+							<input readonly type="text" class="buttonResult" id="tours" />
+						</p>
+						<p>
+							Bien joué !! <br />
+							Maintenant, je te propose une petite vidéo explicative sur le
+							fonctionnement de ton cerveau durant cette expérience.
+						</p>
+					</div>
+				</div>
+
+				<!-- Fond des regles -->
+				<div class="svg">
+					<img src="images/vectortest.svg" alt="blob" />
+				</div>
+
+				<!-- Button sur les règles -->
+				<label class="play" id="play">
+					<span
+						class="iconify"
+						data-icon="bi:play-fill"
+						data-inline="false"
+					></span>
+				</label>
+				<label class="play" id="resulPlay" onclick="afficheVideo()">
+					<span class="iconify" data-icon="bi:play-fill" data-inline="false">
+					</span>
+				</label>
+			</div>
+
+			<!-- Cyber Simon le jeu -->
+
+			<div class="simon">
+				<main class="game">
+					<section class="tile-container js-container unclickable">
+						<div class="tile tile-red" data-tile="red"></div>
+						<div class="tile tile-green" data-tile="green"></div>
+						<div class="tile tile-blue" data-tile="blue"></div>
+						<div class="tile tile-yellow" data-tile="yellow"></div>
+					</section>
+				</main>
+				<div class="info-section">
+					<span class="info js-info hidden"></span>
+				</div>
+
+				<div class="blob">
+					<img src="images/Blob-2.svg" alt="blob" />
+					<img src="images/Blob-3.svg" alt="Blob" />
+					<img src="images/Blob-1.svg" alt="Blob" />
+					<img src="images/Cerveau1.svg" alt="Cerveau" />
+				</div>
+				<div class="option">
+					<button class="button js-continue hidden">Continue</button>
+					<button class="button js-start">Start</button>
+					<button class="button js-reset">Reset</button>
+					<a
+						href="https://mmi.univ-smb.fr/~achardle/Kiwe/www/realisations.html#cont4"
+						class="button js-reset"
+						>Exit</a
+					>
+				</div>
+				<a class="scientifique js-pause">
+					<img src="images/scientifique.png" alt="scientifique" />
+				</a>
+			</div>
+			<!-- Video Explication -->
+			<div class="fond hidden" id="videoFond">
+				<div class="center video">
+					<video class="video" src="images/explication.mp4" controls></video>
+					<a class="skip" onclick="Fcredis()">
+						<img src="images/skip.svg" />
+						<p>SKIP</p>
+					</a>
+				</div>
+
+				<div class="videoFond">
+					<img class="center" src="images/videoFond.svg" alt="Blobs" />
+				</div>
+			</div>
+			<!-- Crédis -->
+			<div class="credis">
+				<div class="videoFond">
+					<img class="center" src="images/videoFond.svg" alt="Blobs" />
+				</div>
+				<h4>
+					Merci d’avoir participé <br />
+					à notre expérience
+				</h4>
+				<p>Réalisé par :</p>
+				<div class="flex">
+					<p>
+						Alyssa <br />
+						Henenne
+					</p>
+					<p>
+						Valentin <br />
+						Lansigu
+					</p>
+					<p>
+						Clémence <br />
+						Veyret
+					</p>
+					<p>
+						Léo <br />
+						Achard
+					</p>
+				</div>
+				<div class="flex">
+					<a href="https://mmi.univ-savoie.fr/site/"
+						><img src="images/logob.svg" alt=""
+					/></a>
+					<a href="https://www.iut-chy.univ-smb.fr/"
+						><img src="images/logoiut.png" alt=""
+					/></a>
+
+					<a href="../../Kiwe/www/index.html"
+						><img
+							id="kiwe"
+							src="images/Kiwe-baseline-light.svg"
+							alt="Logo Kiwe"
+					/></a>
+				</div>
+				<a class="boutonRetour" href="../../Kiwe/www/realisations.html">
+					<p>Retour à l'accueil</p>
+				</a>
+			</div>
+
+			<!-- Musique -->
+
+			<div class="hidden">
+				<audio src="sounds/simonSound1.mp3" data-sound="red"></audio>
+				<audio src="sounds/simonSound2.mp3" data-sound="green"></audio>
+				<audio src="sounds/simonSound3.mp3" data-sound="blue"></audio>
+				<audio src="sounds/simonSound4.mp3" data-sound="yellow"></audio>
+			</div>
+		</div>
+		<div class="decors center">
+			<img src="images/fondMobile.png" alt="cercles" />
+		</div>
+
+		<!-- Erreur format -->
+		<div class="phone center">
+			<h3>Erreur !</h3>
+			<p>
+				Bonjour, <br />
+				l’agence Kiwe vous annonce que cette réalisation doit se faire sur un
+				ordinateur. <br /><br />
+				Merci de votre compréhension.
+			</p>
+			<img src="images/Kiwe-agency-light 1.png" alt="" />
+		</div>
+		<a
+			class="retour"
+			href="https://mmi.univ-smb.fr/~achardle/Kiwe/www/realisations.html#cont4"
+		>
+			<img src="images/retour.svg" alt="retour" />
+			<p>Retour au site</p>
+		</a>
+	</body>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</html>
